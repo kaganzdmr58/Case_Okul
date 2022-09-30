@@ -1,0 +1,23 @@
+﻿@model Okul.Models.Ders
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h4>Ders Detayları</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DersName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DersName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.DersID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

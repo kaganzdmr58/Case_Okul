@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Okul.Models.Ogrenci>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Öğrenciler</h1>
+
+<p>
+    <a asp-action="Create">Öğrenci Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrenciName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrenciTcNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrenciDogumTarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OgrenciSinif)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrenciName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrenciTcNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrenciDogumTarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OgrenciSinif)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OgrenciID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OgrenciID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OgrenciID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
